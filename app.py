@@ -13,7 +13,7 @@ This server handles:
 The server uses only Python's standard library modules, so it can run
 without installing any third‑party dependencies.
 """
-
+import mimetypes
 import http.server
 import socketserver
 import os
@@ -86,7 +86,8 @@ class RegistrationHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.send_error(404, "Not Found")
             return
         self.send_response(200)
-        mime_type = self.guess_type(file_path)
+        mime_type, _ = mimetypes.guess_type(file_path)
+        mime_type = mime_type or "application/octet-stream"
         self.send_header('Content-Type', mime_type)
         self.end_headers()
         with open(file_path, 'rb') as f:
@@ -183,6 +184,7 @@ class RegistrationHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
     def handle_registration(self):
         """Process form submission, validate inputs, save files, and record data."""
+        os.makedirs(UPLOAD_DIR, exist_ok=True)
         content_type = self.headers.get('content-type')
         if not content_type:
             self.redirect_with_error('Missing Content-Type header.')
