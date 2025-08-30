@@ -1,106 +1,135 @@
 /* Base styles for the registration website */
+/*
+ * Dark themed styles inspired by the Worldcoin Watch site. This palette
+ * uses deep blues and purples with soft accent colours to create a
+ * modern, professional look suitable for a registration portal. The
+ * gradient heading and buttons draw attention without overwhelming
+ * users. Inputs and tables are styled to contrast against the dark
+ * background while maintaining accessibility.
+ */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f7fa;
+    background-color: #0a0f23; /* deep navy background */
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #e8e9eb; /* light text for contrast */
 }
 
+/* Main card container */
 .container {
     width: 90%;
     max-width: 900px;
     margin: 40px auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #111c44; /* dark card background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
     margin-top: 0;
-    font-size: 1.8em;
-    color: #2c3e50;
+    font-size: 2em;
+    /* gradient text for heading */
+    background: linear-gradient(90deg, #3a8ffe, #a76ddd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header p {
-    color: #555;
+    color: #a0aec0; /* muted text */
     margin-bottom: 20px;
 }
 
+/* spacing between form groups */
 .registration-form .form-group {
     margin-bottom: 20px;
 }
 
+/* labels for form fields */
 .registration-form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #a0aec0;
 }
 
+/* text and file inputs */
 .registration-form input[type="text"],
 .registration-form input[type="file"] {
     width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px 12px;
+    border: 1px solid #2e4e87; /* subtle border */
+    border-radius: 6px;
     font-size: 1em;
+    background-color: #152e57; /* dark input field */
+    color: #fefefe;
 }
 
+/* asterisk indicating required fields */
 .required {
-    color: #e74c3c;
+    color: #e57474;
     font-weight: normal;
 }
 
+/* stack radio buttons vertically */
 .radio-group {
     display: flex;
     flex-direction: column;
 }
 
+/* styling for radio buttons */
 .radio-label {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
     font-weight: normal;
+    color: #a0aec0;
 }
 
+/* customise radio button accent colour */
 .radio-label input[type="radio"] {
     margin-right: 8px;
+    accent-color: #3a8ffe;
 }
 
+/* button styling with gradient */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #2980b9;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #3a8ffe, #6ab7ff);
     color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     text-decoration: none;
     font-size: 1em;
+    transition: background 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #1f6391;
+    background: linear-gradient(90deg, #2e71d4, #5a9ce6);
 }
 
+/* preview area spacing */
 .preview {
     margin-top: 10px;
 }
 
+/* preview images of uploaded IDs */
 .preview-image {
     max-width: 100%;
     max-height: 200px;
-    border: 1px solid #ddd;
+    border: 1px solid #2e4e87;
     border-radius: 4px;
 }
 
+/* error flash messages */
 .flash-messages {
     list-style: none;
-    padding: 10px;
-    background-color: #fdecea;
-    color: #e74c3c;
-    border: 1px solid #f3c4c4;
+    padding: 12px;
+    background-color: #5a1837;
+    color: #fcd8e0;
+    border: 1px solid #91204d;
     border-radius: 4px;
     margin-bottom: 20px;
 }
@@ -109,24 +138,25 @@ header p {
     margin: 0;
 }
 
+/* sections for additional information */
 .info-section {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #2e4e87;
 }
 
 .info-section h2 {
     margin-top: 0;
-    color: #2c3e50;
+    color: #8da9d8;
 }
 
 .info-section p {
-    color: #555;
+    color: #a0aec0;
 }
 
 .info-image {
     max-width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid #2e4e87;
     border-radius: 4px;
     display: block;
     margin-top: 10px;
@@ -140,19 +170,24 @@ header p {
 }
 
 .admin-table th, .admin-table td {
-    border: 1px solid #ddd;
+    border: 1px solid #2e4e87;
     padding: 8px;
     text-align: center;
+    color: #e2e8f0;
 }
 
 .admin-table th {
-    background-color: #f7f7f7;
+    background-color: #132e55;
     font-weight: bold;
+}
+
+.admin-table td {
+    background-color: #0f2344;
 }
 
 .thumb {
     width: 80px;
     height: auto;
-    border: 1px solid #ccc;
+    border: 1px solid #2e4e87;
     border-radius: 4px;
 }
