@@ -231,7 +231,7 @@ class RegistrationHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     # Ensure the upload directory exists
         os.makedirs(UPLOAD_DIR, exist_ok=True)
         back_path = os.path.join(UPLOAD_DIR, back_filename)
-     b
+     
         try:
             with open(front_path, 'wb') as f:
                 shutil.copyfileobj(front_file.file, f)
