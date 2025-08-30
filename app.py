@@ -228,7 +228,10 @@ class RegistrationHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         back_filename = f"{timestamp}_{unique_id}_back_{os.path.basename(back_file.filename)}"
         # Save files to UPLOAD_DIR
         front_path = os.path.join(UPLOAD_DIR, front_filename)
+    # Ensure the upload directory exists
+        os.makedirs(UPLOAD_DIR, exist_ok=True)
         back_path = os.path.join(UPLOAD_DIR, back_filename)
+     b
         try:
             with open(front_path, 'wb') as f:
                 shutil.copyfileobj(front_file.file, f)
